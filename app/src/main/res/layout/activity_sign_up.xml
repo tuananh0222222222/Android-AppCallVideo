@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignUpActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" >
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/app_name"
+            app:tint="@color/colorTextIcon" />
+        <TextView
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/bold"
+            android:includeFontPadding="false"
+            android:text="Đăng ký"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/colorTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_4sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="@dimen/_4sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:includeFontPadding="false"
+                        android:text="Họ"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/input_firstName"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorHintText"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:includeFontPadding="false"
+                        android:text="Tên"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/input_lastname"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorHintText"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:includeFontPadding="false"
+                        android:text="Email"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/input_email"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:hint="you@example.com"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorHintText"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:includeFontPadding="false"
+                        android:text="Mật khẩu"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/input_password"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:hint="@string/password_hint"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="textPassword"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorHintText"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:includeFontPadding="false"
+                        android:text="Nhập lại mật khẩu"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/input_Confirmpassword"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:fontFamily="@font/regular"
+                        android:hint="@string/password_hint"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="textPassword"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorHintText"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+                    android:text="@string/dangki"
+                    android:textColor="@color/colorTextIcon"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintTop_toBottomOf="@id/card_signin" />
+                <ProgressBar
+                    android:id="@+id/signUpProgressbar"
+                    android:layout_width="@dimen/_25ssp"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"
+                    android:layout_height="@dimen/_25ssp" />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/text_noAction"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/_13sdp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bạn đã có tài khoản ?" />
+
+            <TextView
+                android:id="@+id/text_signIn"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="#3F51B5"
+                android:textSize="@dimen/_14sdp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đăng nhập" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

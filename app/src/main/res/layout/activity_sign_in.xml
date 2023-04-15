@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignInActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+                android:text="Đăng nhập | Đăng ký "
+                android:textColor="@color/colorTextIcon"
+                android:textSize="@dimen/_16sdp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium"
+                android:includeFontPadding="false"
+                android:text="Để sử dụng ứng dụng"
+                android:textColor="@color/colorTextIcon"
+                android:textSize="@dimen/_15sdp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_loginlabel"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Đăng nhập"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            android:textSize="@dimen/_15ssp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_signin"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/text_loginlabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_4sdp"
+                >
+                <TextView
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/regular"
+                    android:includeFontPadding="false"
+                    android:text="Email"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/regular"
+                    android:hint="you@example.com"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorHintText"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp" />
+
+                <TextView
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/regular"
+                    android:includeFontPadding="false"
+                    android:text="Mật khẩu"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:fontFamily="@font/regular"
+                    android:hint="@string/password_hint"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorHintText"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_signin"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/bold"
+            android:includeFontPadding="false"
+            android:background="@color/colorPrimary"
+            android:text="@string/dangnhap"
+            android:textColor="@color/colorTextIcon"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintTop_toBottomOf="@id/card_signin"
+            android:layout_width="match_parent"
+
+            android:layout_height="@dimen/_30sdp" />
+
+    <ProgressBar
+        android:id="@+id/signInProgressBar"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/button_signin"
+        app:layout_constraintEnd_toEndOf="@id/button_signin"
+        app:layout_constraintStart_toStartOf="@id/button_signin"
+        app:layout_constraintTop_toTopOf="@id/button_signin"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp" />
+
+        <TextView
+            android:id="@+id/text_noAction"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintTop_toBottomOf="@+id/button_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản ?" />
+
+        <TextView
+            android:id="@+id/text_signUp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="#3F51B5"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/text_noAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng ký" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

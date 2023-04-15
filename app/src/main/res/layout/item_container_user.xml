@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textFirstChar"
+        android:background="@drawable/background_user_icon"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextIcon"
+        android:textSize="@dimen/_22sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDiviver"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp" />
+
+    <View
+        android:id="@+id/viewSupportter"
+        app:layout_constraintBottom_toBottomOf="@+id/textFirstChar"
+        app:layout_constraintStart_toEndOf="@+id/textFirstChar"
+        app:layout_constraintTop_toTopOf="@id/textFirstChar"
+        android:layout_width="1dp"
+        android:layout_height="1dp" />
+
+    <ImageView
+        android:id="@+id/imageAudioMetting"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_4sdp"
+        android:src="@drawable/ic_call"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/viewDiviver"
+        app:layout_constraintEnd_toStartOf="@id/imageVideoMetting"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/imageVideoMetting"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/ic_video"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/viewDiviver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp" />
+
+    <TextView
+        android:id="@+id/textUser"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/medium"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toTopOf="@id/viewSupportter"
+        app:layout_constraintEnd_toStartOf="@id/imageAudioMetting"
+        app:layout_constraintStart_toEndOf="@id/textFirstChar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/medium"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@id/imageAudioMetting"
+        app:layout_constraintStart_toEndOf="@id/textFirstChar"
+        app:layout_constraintTop_toBottomOf="@id/viewSupportter"
+
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <View
+        android:id="@+id/viewDiviver"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@color/colorDevider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textFirstChar"
+        app:layout_constraintTop_toBottomOf="@id/textFirstChar"
+       />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

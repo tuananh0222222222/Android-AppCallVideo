@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Call Video</string>
+
+    <string name="password_hint">• • • • • • • •</string>
+    <string name="dangnhap">Đăng nhập</string>
+    <string name="dangky">Đăng ký</string>
+    <string name="dangki">Đăng ký</string>
+</resources>

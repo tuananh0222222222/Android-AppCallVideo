@@ -29,6 +29,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
 
     }
+
 }
 
 dependencies {
@@ -40,6 +41,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.0.3'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.5.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
     //firebase
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

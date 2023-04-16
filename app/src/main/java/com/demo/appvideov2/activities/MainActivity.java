@@ -8,7 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.installations.FirebaseInstallations;
-import com.google.firebase.installations.InstallationTokenResult;
-import com.google.firebase.messaging.FirebaseMessaging;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -179,10 +178,10 @@ public class MainActivity extends AppCompatActivity implements UserListener {
                     Toast.LENGTH_SHORT)
                     .show();
         }else {
-            Toast.makeText(this,
-                            "video " + user.firstName +"" +user.lastName ,
-                            Toast.LENGTH_SHORT)
-                    .show();
+         Intent intent = new Intent(getApplicationContext(),OutGoingInvitationActivity.class);
+        intent.putExtra("user",user);
+        intent.putExtra("type","video");
+        startActivity(intent);
         }
     }
 

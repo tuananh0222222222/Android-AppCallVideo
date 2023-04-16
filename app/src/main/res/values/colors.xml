@@ -17,4 +17,7 @@
     <color name="colorTextIcon">#ffffff</color>
     <color name="colorBackground">#fafafa</color>
     <color name="colorHintText">#bdbdbd</color>
+
+    <color name="colorMeetingStart">#4004bb</color>
+    <color name="colorMeetingEnd">#8a1aaa</color>
 </resources>

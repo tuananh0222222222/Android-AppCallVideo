@@ -3,6 +3,7 @@ package com.demo.appvideov2.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.demo.appvideov2.R;
 import com.demo.appvideov2.adapters.UserAdapter;
+import com.demo.appvideov2.listeners.UserListener;
 import com.demo.appvideov2.models.User;
 import com.demo.appvideov2.utillities.Constants;
 import com.demo.appvideov2.utillities.PreferenceManager;
@@ -34,14 +36,16 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements UserListener {
 
 
     private PreferenceManager preferenceManager;
     private List<User> users;
     private UserAdapter userAdapter;
     private  TextView textErrorMess;
-    private ProgressBar userProgressBar;
+
+    private SwipeRefreshLayout swipeRefreshLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,25 +79,29 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView userRecyclerView= findViewById(R.id.userRecycleView);
         textErrorMess = findViewById(R.id.textErrorMessage);
-        userProgressBar = findViewById(R.id.userprogressbar);
+
         users = new ArrayList<>();
-        userAdapter = new UserAdapter(users);
+        userAdapter = new UserAdapter(users ,this);
         userRecyclerView.setAdapter(userAdapter);
+
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setOnRefreshListener(this::getUser);
 
         getUser();
     }
 
     private  void getUser(){
-        userProgressBar.setVisibility(View.VISIBLE);
+         swipeRefreshLayout.setRefreshing(true);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection(Constants.KEY_COLLECTION_USER)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        userProgressBar.setVisibility(View.GONE);
+                        swipeRefreshLayout.setRefreshing(false);
                         String myUserId = preferenceManager.getString(Constants.KEY_USER_ID);
                         if(task.isSuccessful() && task.getResult() != null){
+                            users.clear();
                             for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
                                 if(myUserId.equals(documentSnapshot.getId())){
                                     continue;
@@ -161,5 +169,35 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void initiateVideoMeeting(User user) {
+        if(user.token == null || user.token.trim().isEmpty()){
+            Toast.makeText(this,
+                     user.firstName +"" +user.lastName + " không hoạt động !",
+                    Toast.LENGTH_SHORT)
+                    .show();
+        }else {
+            Toast.makeText(this,
+                            "video " + user.firstName +"" +user.lastName ,
+                            Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+
+    @Override
+    public void initiateAudioMeeting(User user) {
+        if(user.token == null || user.token.trim().isEmpty()){
+            Toast.makeText(this,
+                            user.firstName +"" +user.lastName + " không hoạt động !",
+                            Toast.LENGTH_SHORT)
+                    .show();
+        }else {
+            Toast.makeText(this,
+                            "Call " + user.firstName +"" +user.lastName ,
+                            Toast.LENGTH_SHORT)
+                    .show();
+        }
     }
 }

@@ -7,6 +7,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import android.widget.TextView;
@@ -28,6 +29,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.installations.FirebaseInstallations;
+import com.google.firebase.installations.InstallationTokenResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 
 import java.util.ArrayList;
@@ -59,16 +62,17 @@ public class MainActivity extends AppCompatActivity implements UserListener {
                 preferenceManager.getString(Constants.KEY_LAST_NAME)
         ));
         // gui token len firebase
-       FirebaseInstallations.getInstance().getId().addOnCompleteListener(new OnCompleteListener<String>() {
-           @Override
-           public void onComplete(@NonNull Task<String> task) {
-               if(task.isSuccessful() && task.getResult() != null){
-                   String token = task.getResult();
-                   sendCFMTokenToDatabase(token);
-               }
-           }
-       });
-       //
+
+
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if(task.isSuccessful() && task.getResult() !=null){
+                    sendCFMTokenToDatabase(task.getResult());
+                }
+            }
+        });
+
         findViewById(R.id.textSignout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

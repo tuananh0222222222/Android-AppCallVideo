@@ -5,7 +5,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiClient {
     private static Retrofit retrofit = null;
-
+//send
     public  static  Retrofit getClient(){
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()

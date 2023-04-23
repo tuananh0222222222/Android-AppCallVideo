@@ -106,6 +106,7 @@ public class SignUpActivity extends AppCompatActivity {
                 preferenceManager.putString(Constants.KEY_LAST_NAME,inputLastName.getText().toString());
                 preferenceManager.putString(Constants.KEY_EMAIL,inputEmail.getText().toString());
 
+
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);

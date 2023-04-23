@@ -36,24 +36,23 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_4sdp"
         android:src="@drawable/ic_call"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@id/viewDiviver"
         app:layout_constraintEnd_toStartOf="@id/imageVideoMetting"
         app:layout_constraintTop_toTopOf="parent"
 
-        />
+        app:tint="@color/colorPrimary" />
 
     <ImageView
         android:id="@+id/imageVideoMetting"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_2sdp"
         android:src="@drawable/ic_video"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@id/viewDiviver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_30sdp" />
+        android:layout_height="@dimen/_30sdp"
+        app:tint="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/textUser"

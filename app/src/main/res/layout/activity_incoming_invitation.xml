@@ -24,7 +24,7 @@
         android:fontFamily="@font/bold"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:text="Đang gọi ..."
+        android:text="Cuộc gọi đến "
         android:textSize="@dimen/_15sdp"
         android:textColor="@color/colorTextIcon"
         app:layout_constraintTop_toBottomOf="@id/imageMeetingType"
@@ -80,11 +80,11 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_8sdp"
         android:src="@drawable/ic_apect"
-        android:tint="@color/colorTextIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp" />
+        android:layout_height="@dimen/_40sdp"
+        app:tint="@color/colorTextIcon" />
 
     <ImageView
         android:id="@+id/imageCLose"
@@ -94,9 +94,9 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_8sdp"
         android:src="@drawable/ic_close"
-        android:tint="@color/colorTextIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp" />
+        android:layout_height="@dimen/_40sdp"
+        app:tint="@color/colorTextIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

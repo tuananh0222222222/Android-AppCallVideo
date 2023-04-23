@@ -97,7 +97,7 @@ public class SignInActivity extends AppCompatActivity {
                         }else{
                             progressBarSinIn.setVisibility(View.INVISIBLE);
                             buttonSignin.setVisibility(View.VISIBLE);
-                            Toast.makeText(SignInActivity.this, "Có lỗi xảy ra !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "Tài khoản hoặc mật khẩu không đúng!!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

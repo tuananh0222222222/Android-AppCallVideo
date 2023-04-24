@@ -73,17 +73,16 @@
 
     <ImageView
         android:id="@+id/imageStop"
-
         android:layout_marginBottom="@dimen/_50sdp"
         android:background="@drawable/background_close"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_8sdp"
-        android:src="@drawable/ic_close"
+        android:src="@drawable/ic_callend"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         app:tint="@color/colorTextIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,6 @@
     <gradient
         android:angle="270"
         android:endColor="@color/colorMeetingStart"
-        android:startColor="@color/colorMeetingEnd"
+        android:startColor="@color/colorMeetingStart"
         />
 </shape>

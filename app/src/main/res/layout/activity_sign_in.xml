@@ -12,31 +12,13 @@
         <LinearLayout
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_150sdp"
+            android:layout_height="@dimen/_50sdp"
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/bold"
-                android:includeFontPadding="false"
-                android:text="Đăng nhập | Đăng ký "
-                android:textColor="@color/colorTextIcon"
-                android:textSize="@dimen/_16sdp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/medium"
-                android:includeFontPadding="false"
-                android:text="Để sử dụng ứng dụng"
-                android:textColor="@color/colorTextIcon"
-                android:textSize="@dimen/_15sdp"
-                />
         </LinearLayout>
 
         <TextView
@@ -48,7 +30,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutHeader"
-            android:textSize="@dimen/_15ssp"
+            android:textSize="@dimen/_20ssp"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -85,7 +67,7 @@
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:fontFamily="@font/regular"
-                    android:hint="you@example.com"
+                    android:hint=""
                     android:imeOptions="actionNext"
                     android:importantForAutofill="no"
                     android:includeFontPadding="false"
@@ -114,7 +96,7 @@
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:paddingBottom="@dimen/_8sdp"
                     android:fontFamily="@font/regular"
-                    android:hint="@string/password_hint"
+                    android:hint=""
                     android:imeOptions="actionNext"
                     android:importantForAutofill="no"
                     android:includeFontPadding="false"

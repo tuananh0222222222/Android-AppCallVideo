@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText inputFirsrName,inputLastName,inputEmail,inputPassWord,inputComfirmPass;
+    private EditText inputLastName,inputEmail,inputPassWord,inputComfirmPass;
     private AppCompatButton buttonSignUp;
     private ProgressBar signUpprogressBar;
     private PreferenceManager preferenceManager;
@@ -50,7 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
         // goi id tu activity
-        inputFirsrName = findViewById(R.id.input_firstName);
+
         inputLastName = findViewById(R.id.input_lastname);
         inputEmail = findViewById(R.id.input_email);
         inputPassWord = findViewById(R.id.input_password);
@@ -61,9 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(inputFirsrName.getText().toString().trim().isEmpty()){
-                    Toast.makeText(SignUpActivity.this, "Không được để trống", Toast.LENGTH_SHORT).show();
-                } else if (inputLastName.getText().toString().trim().isEmpty()) {
+                if(inputLastName.getText().toString().trim().isEmpty()){
                     Toast.makeText(SignUpActivity.this, "Không được để trống", Toast.LENGTH_SHORT).show();
                 }else if (inputEmail.getText().toString().trim().isEmpty()) {
                     Toast.makeText(SignUpActivity.this, "Không được để trống ", Toast.LENGTH_SHORT).show();
@@ -89,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
         //get input
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         HashMap<String,Object> user = new HashMap<>();
-        user.put(Constants.KEY_FIRST_NAME,inputFirsrName.getText().toString());
+
         user.put(Constants.KEY_LAST_NAME,inputLastName.getText().toString());
         user.put(Constants.KEY_EMAIL,inputEmail.getText().toString());
         user.put(Constants.KEY_PASSWORD,inputPassWord.getText().toString());
@@ -102,7 +100,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onSuccess(DocumentReference documentReference) {
                 preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
                 preferenceManager.putString(Constants.KEY_USER_ID,documentReference.getId());
-                preferenceManager.putString(Constants.KEY_FIRST_NAME,inputFirsrName.getText().toString());
+
                 preferenceManager.putString(Constants.KEY_LAST_NAME,inputLastName.getText().toString());
                 preferenceManager.putString(Constants.KEY_EMAIL,inputEmail.getText().toString());
 

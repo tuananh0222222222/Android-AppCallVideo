@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements UserListener {
 
         TextView texttitle = findViewById(R.id.textTitle);
         texttitle.setText(String.format(
-                "%s %s",preferenceManager.getString(Constants.KEY_FIRST_NAME),
+                "%s %s",preferenceManager.getString(Constants.KEY_LAST_NAME),
                 preferenceManager.getString(Constants.KEY_LAST_NAME)
         ));
         // gui token len firebase
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements UserListener {
                                     continue;
                                 }
                                 User user = new User();
-                                user.firstName = documentSnapshot.getString(Constants.KEY_FIRST_NAME);
+
                                 user.lastName = documentSnapshot.getString(Constants.KEY_LAST_NAME);
                                 user.email = documentSnapshot.getString(Constants.KEY_EMAIL);
                                 user.token = documentSnapshot.getString(Constants.KEY_FCM_TOKEN);

@@ -15,6 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
+
         <activity
             android:name=".activities.OutGoingInvitationActivity"
             android:exported="false"
@@ -44,6 +45,14 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="org.jitsi.meet.sdk.ConnectionService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.jitsi.meet.CONNECTION_SERVICE" />
             </intent-filter>
         </service>
     </application>

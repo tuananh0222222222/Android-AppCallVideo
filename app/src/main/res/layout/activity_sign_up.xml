@@ -60,45 +60,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" >
 
+
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
                         android:fontFamily="@font/regular"
                         android:includeFontPadding="false"
-                        android:text="Họ"
-                        android:textSize="@dimen/_11sdp"
+                        android:text="Họ tên"
                         android:textColor="@color/colorPrimaryText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <EditText
-                        android:id="@+id/input_firstName"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp"
-                        android:fontFamily="@font/regular"
-
-                        android:imeOptions="actionNext"
-                        android:importantForAutofill="no"
-                        android:includeFontPadding="false"
-                        android:inputType="text"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textColorHint="@color/colorHintText"
-                        android:textSize="@dimen/_13sdp"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_30sdp" />
-
-                    <TextView
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp"
-                        android:fontFamily="@font/regular"
-                        android:includeFontPadding="false"
-                        android:text="Tên"
-                        android:textSize="@dimen/_11sdp"
-                        android:textColor="@color/colorPrimaryText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/_11sdp" />
 
                     <EditText
                         android:id="@+id/input_lastname"
@@ -133,7 +106,7 @@
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
                         android:fontFamily="@font/regular"
-                        android:hint="you@example.com"
+
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
@@ -162,7 +135,7 @@
                         android:layout_marginEnd="@dimen/_8sdp"
                         android:paddingBottom="@dimen/_8sdp"
                         android:fontFamily="@font/regular"
-                        android:hint="@string/password_hint"
+
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
@@ -191,7 +164,7 @@
                         android:layout_marginEnd="@dimen/_8sdp"
                         android:paddingBottom="@dimen/_8sdp"
                         android:fontFamily="@font/regular"
-                        android:hint="@string/password_hint"
+
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
@@ -209,6 +182,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_signup"
+
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:layout_marginStart="@dimen/_20sdp"
